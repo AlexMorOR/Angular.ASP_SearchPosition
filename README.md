@@ -1,7 +1,7 @@
 # SearchPosition Web App
 
-## Api Layer Setup
-To setup API layer (ASP.NET Core and SQL Express) you need execute this command in Developer PowerShell:
+## Api and Data Layers Setup
+To setup API and Data layers (ASP.NET Core and SQL Express) you need execute this command in Developer PowerShell:
 ```console
 cd Angular.ASP_SearchPosition.Data
 dotnet ef database update --startup-project ../Angular.ASP_SearchPosition.API
@@ -26,7 +26,7 @@ SPA can be accessed via http://localhost:8080/
 The .NET 6 based Web App.
 
 The solution is a N tier Web API that been splitted in 3 layers (Data, API, SPA)
-The architecture includes Depenency injection (by default), ORM (EntityFramework), RestAPI as a gateway via Controllers, Services, Factories and Decarators
+The architecture includes Depenency injection (ASP.NET), ORM (EntityFramework), RestAPI as a gateway via Controllers, Services, Factories and Decarators
 to provide different behaviour or additional behaviour, Helpers etc.
 
 ### Data Layer:
