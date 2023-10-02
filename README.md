@@ -41,3 +41,12 @@ to provide different behaviour or additional behaviour, Helpers etc.
 ### SPA Layer:
 - Development Framework: Angular, enabling a dynamic, interactive user interface.
 - Interaction Mechanism: Designed for real-time communication with the API layer, ensuring an agile, responsive user engagement experience.
+
+P.S.
+> We can further divide the project into SPA, API, Application, Core, Data, Tests and so on, but I divided it only into API, SPA and Data so as not to make the project difficult to read.
+
+> I created my own tag search for the html file, but I prefer to use HtmlAgilityPack.
+
+> I created my own logging using decorator pattern, but in real project I will use Serilog (For .NET Applications), Prometheus (General Purpose), Application Insights (Azure).
+
+> I haven't added any tests, but I would test the SPA on Angular via Karma because it's already built in and Protractor for UI testing. And I would write tests for the API in Moq using xUnit or NUnit, or in FluentAssertions in the case of BDD.
