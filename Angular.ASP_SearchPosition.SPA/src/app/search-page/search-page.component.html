@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="row col-8 offset-2">
+            <div class="col-6">
+                <app-search-form [searchEngines]="service.avaliableEngines" (searchEvent)="onSearch($event)"/>
+            </div>
+            <div class="col-6">
+                <div class="text-center">
+                    <h2>
+                        Search history
+                    </h2>
+                    (Last)
+                </div>
+                <ul *ngIf="service.searchResults && service.searchResults.length > 0" class="list-group">
+                    <li 
+                    class="list-group-item d-flex justify-content-between align-items-start 
+                    mb-2 border px-4 py-3 rounded-3"
+                    *ngFor="let sr of service.searchResults">
+                        <app-search-card [model]="sr"/>
+                    </li>
+                </ul>
+                <div *ngIf="!service.searchResults || service.searchResults.length === 0">
+                    The list is still empty, you haven't searched for anything yet.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

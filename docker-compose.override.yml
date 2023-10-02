@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  angular.asp_searchposition:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

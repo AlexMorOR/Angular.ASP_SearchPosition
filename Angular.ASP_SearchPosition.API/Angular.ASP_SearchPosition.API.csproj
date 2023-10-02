@@ -1,0 +1,411 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <SpaProxyServerUrl>http://localhost:44427</SpaProxyServerUrl>
+    <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+    <PackageReference Include="Scrutor.AspNetCore" Version="3.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\**" />
+    <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="ClientApp\**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\0.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\1.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\2.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\3.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\4.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\5.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\6.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\7.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\8.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\9.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\index.pack" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\angular-webpack\d6884cdb1f57ef94ead85dbc2181994bab80776d\index.pack.old" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\0061d9f9f1a64b47785d8bc2b18287269c55aaf5ee52d074921ca09d79ff4112.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\007084dd92146c6f307499036e2ac6a09a8fc18e4c1e0fab3847f436726b3db0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\0139bb5288a6284342e662888ae2faa57cbfd5ed8f8ee76db64cc5e1789002dd.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\01494dbdd02f4f89a860da3ab5b6820ed05b916c9da70563e04f01a85735ff31.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\015f65d0d68cefdaa1f2234bc8e4af17f42d4d957fe418748c0d17ce8a627cc4.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\01938609244caf824ee258b7ee4a47a99d4c87a9d9675ef8f7bfab17d2249d87.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\021b80ef7117e8827649c5bfe394e167600c3d5bdfb3c4de4cc496c9066fe801.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\05ff9b69211414eed6d955d4755b84615a0c688c8799a97e3f7cf20797d095b3.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\06ac2742dae34aa331fcb643afdedb31c2428fe070a7403a0ebbf6a18b49859d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\08067749c29e565c28b27ec39bd464ef1c0a9a30ab83f1b29d4093fc25cd4350.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\0874e7acdfa6a26daefb7d56014ce019a4e18517947e5e3d99738697265a764e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\08a9cb0467f7277b791c7945850fd8e113b1688e6a6e01a4cf1b020bd910bef1.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\0a198026b32a11f7da3cf76e1a16e9d0405ecec71db9f04c904c068564bfe6e3.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\0a9a1019b790722ffdd00513dbc75cbf635b35d24f712b83a4d3e39a0a68bb03.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\0bc10f8d6078256a126b5b21ce21815a4eeca096860563abfdcbbb2fc711d363.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\0f82fcf053ece167a23cfb89141210860c8e0a34633609e503a7a06ccce8e83b.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\11ddb835bd41e053a817be9a5edb2cbde86be6328f08fbfb1a4d5c4e0a56889a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\11f0bed5ad4bfef77c864314ef966d117c141cee8207d6c07c94ff3e6a7e5d89.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\127b5cd8cb8dd5134c0e27db2f0bf2a1e5414bc6797fd2a9d719d1ae4782d389.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\138fa7ac98128f02ff0323cae4cf6a0ba3405ab69fde5805d9bf772eddf251c1.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\13d734101d496b589e46fc6a7f140bab2e53908ffe3c9ec594f5fe0864b6883c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\14152d43e29bd393b62559ad3c0d5f5773e5c990a0e56dfab7e04d9a0f6034fe.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\142edb55e0da59484134dab9cede5ad88c28375414b1e82d52840a68cf124145.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\14361d54f2e81edf158dee33c436945cf0187d10732f9e57740982c435d39660.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1463fee360232423813fd223771a08fe7b1b490dc4302927263c53b955a656bc.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\168224d5cc68f12778264d1aa20d1fb56ab16ce21deeca036fc25c62f25a705e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1707c8a9f232e65cb021cce5d2079f17e8aba1040adb42938bed8e6c1b948f71.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\17595459ed009fd7498b81a9a263934cd724933309335bda5d9c3796909a1c0f.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\17c8bcd390f9875a38d7a7243dd60081490c6d3521a1ab73d3e2435486e990de.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\193bf8dc85af0bc92593173fd9ead95d91a2960b70b7d481d8e57e250c6b0411.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1a1b2c2864fadb98f8fa57e2bb4dff811c251b03bdb66314221ac8a04e9e9f56.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1b0178694a5cb0beb676173159905c37fa4efab2a18dd8637742d52d33db9255.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1b69c80450692396f21f593e6247ffae693efe555e6f52b76c4d917f635bbdc2.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1b6ead8d8f111a5c1f98a887081821d9ea33394bbd61f8b05634ac18d64985b1.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1cda9b714d33415510b8b48ca741e9d16e23c5e3e7e0935825684afd47825550.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1d298a20ed575fc994d0343f40899050011cb7f97751850d5542f76a22a69552.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1d5a0763594676f6f1e674a48698d4f746520cc8e2f3441eb4aa1365c6ea3482.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1d695601f1867544f2434619c1fd29c5f65c893b5122a8318b1acfa1c7504114.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\1dee7d1813aeb760f2dc069fb69a8185609233b3813851b2c1bc5ea5e943a6c3.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\20998341f4683026106b168717f02264432b7a5e33a705a67ae9902b886b4004.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\20e61f1c2633421b597fdd23557e6a87ea137b67d7a9eac6681d86f35dd11364.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\21314950a08bc7ae6dd0c51bea50bd0f3552ebb088eca8e298448c9d7d8712a0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\21d95c9c97eb8f21eda58bd0db3fe74fcb80950464dd1910f4b5b9b15b738676.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\22297ffe03624faf245be5477de61324e4ac0087adcd8e5afb343b7d82645bfa.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\250991c79a20c7138d512a8f1a5fbbb5bd77e32353840af9274b878d3a9cf14c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\2ab4572a854b65b442f5185475ba1d7bbc7000f71269cce874ed585f3a94918e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\2acf4cbb12b985490be70a13261e6f42a8c0a325260f6a58f7188ab8fb528bc4.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\2ae50d9a2d65a53d299f20463600a1e2dbe1a1b83066d52f84b66509f60262d1.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\2b3e1b90c7761a826f5161a1fbdc06ef413e01292aeaa0169e4c5069a3bafe56.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\2c1a1aa51a34e7044376a77826cc882e896af0c51a9f91555a0782e914aaf2a4.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\2cb7a723c8efba924be1f0e778a2473408abc6f5b2007be2c12ad77c07a283a7.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\2e4f6afe1371a263f9d0c82e8d30ac10fff507aeaec730ea20d6b1e5a62b6426.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\2f3fbae9f7b5a11e25d7a7be652ee5962e48f9b027146f64e27d3c2dbceb278b.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\304a894d3af3997605925ad67c729a36a6654a4ee9439001dea5920ec38024a8.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3056a8382157381f927b122a57df69092cc5bdbfd80708e37e8de5cb34b3ec41.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3204cdd859b4dcd34a7bbbdb0fbea3cd00884c51e9431d45f6e7201a1e28eef6.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\32c97a91797a928e9f807b115689207dd958375e2baf01908214bad3483f337c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3346764631b727f194627ad3a5db76cd8a9cf2636afa1d6495e8fa523f3b42ff.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3403e5eaab227da6a1996f7798c2526a4f7d454ea3ca7478eac0f6c6587d5e59.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\38f3785afb6e83a0a61760de77fca99a23c069092f49538ae35c2fcf7e82fccd.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3947efef182c0eeb582cf724e07dccabce60f01f813b5dd64031a6bf598520f6.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\395b8bd5b1f84dcac5756ba992a614b1aa8e180da04e6d15edf2cae11d2e8a21.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\397b19246f3f8f4d93a5e96362b1531b4cceeb21eb9dd7ec09258f6eff230a12.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\39ea324b1ce2d846179709c409f756371107d787b7d5d58f38ab32a7a927cd16.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3a2cb3e799a91a39aa373bcd9d4e03d8b2a80b0b06fc55ae8ec74a50b15c513d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3a794bbc49d5521f9ba8e7b10e10496be9b154389ff7974399bb4f426f3a9444.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3b13cc3a535ab42ec57900a0b4510f505fd8a2a3ab73e0065a2f1656ee541980.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3b56510948cf0b6fab4d7c282a8ebbe05c9464848b243c41e435c108b3ba93b9.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3cce41ac65a308a8cece15007fc90504df1a76f322138072a3cc1adbca0a08d2.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\3fc34c573995baf6c16d126a8c79a48b79c1a173c7a54547583984ed55e2db08.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\40c9d9ff6a18e886b6a869d5d91b29bc4cee07b5065dd6b389c18e27a2f0cab0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\43ded26a9c43542bd34c6e44bdd891350bce518b54b597ddb5f127caae8656da.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4450480e96ac0c8f6b37f759a586217aea9c7dcd8ea0c2cb09202c1c2e571f59.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\451eba1ea5bc7f627ca35620247bf4a9aa14f336e87ddcc79802e928ab516e82.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\467b746064435674ab4ee0eb041356e3dbad3ad1a066ef81e75c61af34d1588a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\474bca76ee5da7c7194c688779c8c7c179414d8c48403a1a447ba39f24549619.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4759b6d86e0fc9c5fbcbec26bb7fc14bfb9f506b80b8f5c06f32c8cc48dffca8.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\481412fd2c75acdb5789e555946e7f138a5ce9a10b645bd22508715d998e563c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4a1b469d27e59b425acc48aa401a1484cfaaa307b59cc14b94bfa51c8e4624ae.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4a425da1a55f4703494879b9649e8f1021b95779cd8bdf7062938acf3e4294bb.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4a76384b6f92285b5ee3307afcfb0ca23c0444aed0f4ec0d60c861915428e134.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4c66c216926a246071b22a690531d99061921d77a8dd6d5ae8d5c4a9c91a69a9.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4d914ea9fdce241805a15626a5b2bfdb5774c8fbb313872a436e5b1549fc1ccb.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4e059b2163f02f1c7dbe2250bf077eecc72be74043c1e2f487b2e36de89ef2bd.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4e7c5646a6f0e3d3b3fe1d0f587095e23baa648ddfe0f90ee0eef1f4d4d55bb3.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4ea758346c10c562e8f90fd07778446f8c993b9fca7ab7b9849cccec866f5f07.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4eb4617d38159d5c79dd843c2fc7b96fa8c7cceb045d79824785db0c41983f33.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4eb6252e5f0041e55185e328a8f9f509d4ac647ad760071137fc491425096fa0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4f3a230b7a1f62bc81e903f975fe128089f13aace59804495d128cc73afe21bf.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4f9bf4729b33cb9e1f2db3ccb0f71fdca81ee8880ef6231e63a725fad2777074.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\4fde358a7092bea4eaf74e3f7c1a4617b8c55117cdec78fcc81809866dc363a8.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\50a7dd11406beb0af235ed73721a67f8eee38d73a02560b4a5a75b8bd79f85e7.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\50f847d0691c116f818c167e193f5bd0cc7360b1c6f1294dc52001a4d0019e8d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\51427a2225574c82111560b2e466b400abf1ff81e2510b400a8199442c8f8467.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\527fe7c71cbc7905a063ecea1196ca927681fca48d76663dd15058709d3791db.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5396563dd1a533a5d00fd75a8fc36735aed9652fa9fccea13cee2adfe761728e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5452993b0de373a1ad0ce17732f54f72c327a1ab5fa584c27c75d7b312f6ae09.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\565a94dc7b95478fc2a3f76a8186238568f2f3e00ae8a7237543d6dade1aa6e3.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\56f172a3d5ad7971242fa7eeef555301918174b65fda6736ff35041c9a575bf9.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\57e91e99f725910a886b0997c870cc0e27147e1152d0bf5296335ea3cd2543af.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5876892e6d747017cc343b6d0810f1adac06bac0547c96ebb7065dfa83629d3a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\58b9e6f73809738323ee7da35becea34f68d679786bf54435cad04da440f6568.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5953ee14a81fde2fa751327dd1a784b7a9a7442878b9aa11f23c0b7361c5b10f.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5961a1895d46e08113971f8770d13a01ac4d27098a6e2ab7ac90a6ec3cc80d67.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5a26935cafdff329426c9ffc963f4a7862bfbba859b5271e9687bd75ef40272a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5d08c7a2e6c2bad30ee08c46a3f26388700b8719b2689b057c74e289fba29970.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5e952eba6a55dcdade3731fb341f8c93b9ae291c648d7df433b48034fa795951.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5f92174a8066c6697e844ee0039fdf99e06d8682547b036ecd805b144b59df39.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\5fabd9a63d42c37307265f879443495c9644f290e8748dfc74891ef7f994e75a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\61395f291bdd4bd142e16ab043388e69af6d556e6b3f8f1bf1f1c5a324a62571.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\62a0ab94020a12b9775623f423ef9a52756c7799a5ce168f0d9f69592c370476.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\63d29f642a2a77c3c6f54e2043eacb8b3e60f6a6718e0c1651e47bb0d9fb57b7.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\646fe56e2d0749818f8ce3b546f37e343a7b9f0c70303242b2c4a59863ec2b76.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\68416a59ffc5f5dc42fe1fa06bc647eace9bf2dccbc1e93f512f1c193db00168.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\68d91463ea8246025bdcb2a295bcf33e5e35aead3b19116b5903accf2426a216.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\69142936499c86fe3f9744b2e7aa5cbf039a0ab1f85f2d97ee01d9fc60a8ae45.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\691690cb39e1856d27833f20861e03f20867833527d05f30e27856e0e70986f5.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6985c5d41313d27059ff937125dcb3afdbd404bce103383b16cbf0609c4fe22f.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6a2e545f680710c33ec622b3113cfcb21249fcff021707991176ef28364281b7.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6a70d329aba085ec75ebec3bc62191581ab8567cbb23677c1e10798cf8daeb1b.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6ac376c3a77a809c54cf4ad3ff642a9c49cfd73b8ef2999596e6ac91d363d181.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6b53a3a765a140da6a8bd928f5a0148f831e529e3027ee5e49a832cd4a06224e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6dcc6fdab9ee119204c6064cd017b964279172d661bc8ef740dbe35eb1b6629f.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6dcec12926ec0157cb4b31614f837f8447a62ba7dce0cd8401d4fc0760b6b621.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6e9eead4a3df4710323133051fd0537a865f5eb33ea5e5b6988ec57a797e60b0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6eb6788d2c2a0d23af194838ef5f4ceb5cea8a602b6e4ae3d8e1deab7fa6227e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6f7bba7be5458a94517b04bb8eeae01967e9f53a8742db65456f14761c301d1a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\6f80c904a59b3c3d1ba225f4d78752ba0981b2c763ac0884fc522d6d21579054.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\71363a45b08d3a1d74fa7b6ec6ce57d06df1abf75c2aed5830845db88d32b806.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\71c97babe5420409b78e8291ffd44090a87b9e10eaba58571575b70979fd180b.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\721d33ff83fdd2bbb63051a8a785af05fe27f9f39cb5e7380b0ff37d696b0c15.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7413b48aede9410b9d20676598c71c6da026d3dc6171b45a4a6e3e8a74a8c832.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7513f0f627d9edc49c0d9d4d936f80eaa7a2d69b4d7e7c7d251dd6b1482e5835.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7580520e3f998a799a540bd48fd5e5527dc13390a9c03e0af7e5b0a724f35bf9.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\760d86cb726e2711cd33a90b4ca855bc2f5165fc69da9083adb40f374e8a0b7c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7624d00ee24d3526faea3747240e0d38f80cf4047b977897c575acbfe92df2bb.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\772d737fd739819d208b00b1a4f5bb791dfdfa65336b0c6acd61e478269d00b7.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\77634f0c85aec21d1a7af5b45b21c2c5b728a7d291bdd3cb98a4fe15401f976a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\77bae64264356ae8409bf84e5753f7ebb0988eeab2f341bafbe3fc9cab4baa72.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\77e0bd02b07de227e4abe17d01681055c1e134e153607d478d348ac90b97d0dc.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\79e58a368d77d87b8f30694036724fa471ffca3973ebf6cb17d93eca1be813f4.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7d71a17808b1633c72b57e04ab49f327e9cbc3c438cae6e5219551595c335033.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7e50323123562dbac9a25102e40eb21de4cb30851684cc0c43dbc279a46d0ded.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7ec67e3cc4fafdbbb4da92b92d40c088c733cafb50371d0cde72bc353fed34a5.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7f8ad6e42a13740913e44e03cf73b7a4aeecc7a7627502b26748b7506d0ca867.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\7fad223c9e56fffc38e2171d1928ee9e7d1e886016d68f45eeb0d7dc23b554bf.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\81390bf62fdae2287a0c351a708300473ec207a7e674e42ea06a6706e2ec8b55.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\81ddfd4a60de23065a81e682f8fe6e1f0918e0500cee9e0487fb6de2a8072c7b.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\82a14b288580388b8e7fa2dea71f4ed0b092acd643195dd9883a8bc30eed706a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\834e991b19995377c14866a13c54e044c7d09188f2a02678f1e8ee465bc05e03.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\85cec516feda95605269ce90d5d2fd3f007ed97733237e65199e234f062ef736.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\86065699e50285665aee71011922d5f9ecca9aa381e73012de55f2776724bac9.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\8650d049e72d89e3c2c89e7d12771c576e240fc74f0d11a2359923cb161d2fd8.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\867bf4ca0688c0e44bb4bfbf3c1a98d2480f34dcd94cd743c2e4e0d66a0c147d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\873731dca075b5da9877623bea65c07bd530a31b3581d7e832651bf6363ac2b7.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\87c04f5f2d7410df50fb28c8bc42c3c651d877b14796ba613feb74457f887a32.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\88c217e0ab345ce13990600125f0c00f729d3a6d32518d3acf4239a64545654a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\89676faffc851b8735f56fea75c6cfb4aa11feb53c64c2a8586770e0aa30ab8c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\8c0aa6bcb957814bbba407c783bdbc08567f709547de58063ef789645c6ca453.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\8c451877f547dbf9609e0e9055fac66db1bee0db4d0aeef61ef166dc7cca7188.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\8e4cce6890fbc5ddb1541375e8ee96c4214efda54a39e86a17d58df68ff0f2b5.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\8f200fefb54c67c6f0fb3667124bae1cb2e6d4411522311dc24d2d1f214211fe.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\8f6269f52cd4b8ee57c700b4a7e659093c5241d674d91c8eef81971c9513f94c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\8f773061fa1b6e1c0416c7301b16277e00d82f4c14a5d332fd720edda779a8ad.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\8fb091623b6b0488a8e913b393af283f8325169afda02c85c599a200efda804d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\90d7f49dd0dd1efd30521a8db71f71c38b5cb7bf7af69a00439872b982f0b4c5.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\91561a88cb8aa1996b3af918b0a32c0ce7ccbae6761b13f55f46a70662972047.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\922d8d3b60cbc2e3ff2f9acafb17c6c70e47e0387fa60f48e8b35c440238a573.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\93cbd6bb4a4d1f1ffb4f56f86959b5c9cdfd4af1b2d8d3cff79756badcf46b7c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\94cf9ff14c85eb57333f0f6d87fcd61054b6a78ddaebc7adb3e06d34be5c9d51.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\94f53dc38bb6258737b9df364d4b29216c9adf12aa6d173c3b5c1528be7751be.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\95e92af31c55f7b2d95a025214ef4215b54491551136a52b978370ed8f4ab09f.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\962917927d48c084c98df6da25028711536b1d2b4cb5da3fd04d5977d3d4da2f.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\96433ddeae202ca51c13a738a03c7a96589abf166b6ae1cef0ed70dff1414b7e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9a161549a6f4279c691e9f6c81509ac45cc5325a52fd54be23d308515c4b9cee.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9a6b819c66f1cdc458d87035d18d0205f9fb081aa22e0360044ccbc4bebb6695.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9ab68453631dcb8bfc9fb9e58c1622d1ea0d0db7853e808921fa3c8e39113b85.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9af32d2fa831c0b8eb73a48e1d051eec8b559c505af3a29f010dbfe17852c9de.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9b7337ce40a7f6cd27cf4f5791e52ee85bbbdcfb3f61d155cd7ded92e49a407c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9c0bf8ecf306af9623567eeafd4a004d72d709a611bbb22b564470c9a288a92b.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9c650707eb1a5c2476d255a1f2765c49f3ab86568e768d594f2f50a983d520bd.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9e17a0d204817027798910d399b621633ba41a56b301e22bf3755e80e23c72cf.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9e58c57e0c5c734f52a7cd2ae6b74e83bc43f6e0cd150c8db76b08621703e75e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\9f47ac38571c1ab791f0b164d3c6a06e52302acb927f5bce76c4b2179e61b15a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\a121cafeab8a1c6d4c8d9218473daef6fa2539a3bb286c3c5a58f444e70c03b5.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\a1baec16d6f427a05e06b479ef2fd5c19b48f9194b30d67699932787b6b20aa8.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\a41b6eb666bc5e97e83fec29a1901b2877593546622c0f6dc638c0c95e8a964b.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\a587790ec17de3bef61b368a3290279849acb7885480d1d1b972e029977befd6.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\a6851cdf9ed770d509a8297de3dd251828093fff45dcd83d4ef4eb32a2ef18c3.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\a6fec4afe4a0ea55111ef94f433ace9cd1e859fc4d5a83725f9f1b7967c12d99.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\a841e9fc977bf7f12e4d3eaa57d1fab7c36e0bfe47f7d199527bf2e6a5b0f554.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ab5ee7134d8820d4971324f24d3aa6f4c2742f79e666576aed003350d589cc4a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ab731561561bd0c7d0d9c58c34c221cfeef11e4602f5c74301e9bbe61fc662d5.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\abda4b193eb4adafae28d7ab548fae1268f75db56a115ff7e80a6ec40e249cac.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\adb1506e15aebdfcafacb07e833889b5b4ba4aab41b102a06d5fe0292dc60f47.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\adfb001f8a0cc69e00020ac57d9cbc19207afe7b050b6fc1a3b9ad9c014eb3bd.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ae38a542a32f740de8dd01e63c52ad0dc0d658c0ef6f4450e28a0fee9ddc71b4.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\aeb97bd6926fc8c200bdf8a7b6f3214289b517b98596ab578f6e166e82d5f1ee.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\af69f47009add42a88374bc41d91a91d3f912fd3459b21ce75484967bd617126.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\b08d9c1bc9f2a67323a3ab96809b15ef9776ff9a1259d6ab09bcbac9cebadd35.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\b0b6fbc09f5b2c6e5b987c645d1208f1404f034b9c91b1244a66e03be2a2be01.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\b271eebee2a7e0311c16554d3392988bc414a02828dfefaac5840a18c18ccc4a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\b4a8731ceb69098d95dc4f62a38ea513ad2793a8fa88534378a9f8ea5f131f65.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\b520c99a931c74a65b5d050284988b34b04ba5efdc422c1e88b5618f93d04099.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\b568a5f16d1a05aab882059d6e78ba66cf1e2ba055759b080f1caad2abb941e0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\b689a430b9f3ac60fe401ba29393942292104caf2e8340c7c7c7b7a70e9c6563.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\b71ad17c7e62fb3b576e24574d503d2f259eafc1c58173cb841a21087509f92e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ba27f7b798fa750d7057927a7126aa419c4ee001c65789166f7f4bc36d92dc10.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\bdf7b351e4404c3ba842c6c9f70e84de6c421f7447bbc2190ac2f09f1feff45e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\bf364aed6016ef332ed342e67f7c002b5d299bdc41a044e587a6f4d609c5022d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c019265d20ef33ca41b19be1910b6a0efdb5702e3ee7f82950d4c7ce453ac821.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c0e12ece8ee617b64c455a68f2517ab32d43e922035d1656df062d3ce042660a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c176737c547dfa254f9f9aeb04b895b0fd82b956c054a6b34c910d62d0a34fae.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c18d520d46c330ccb7682b2ad676566d98dc0edc5831463d956a53f56798fdf5.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c3dbb7d5abf94bda4dac9c6912e2cfab5896c14e02b95d1468e3247267888b0a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c3f267f7f39534ef698e4cb214c3e38566029f6cb42e1bdffc5de6a614bb0a33.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c4a4e3df07ce77ea01c034f3212b102bc36410b91e0aa5ecdebca390a403de55.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c5df793059bfc1fbfb997ded14c5a241cf79e1bea5a2f19c2b65b42e0d1b7cbc.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c5e844d59b670f1fe44d6a80d313e22251ad13a54217686ab784fb1c68b05eec.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c7b3cad6dde26b66df16846ee0f42a2209fc3420e8bca750b448c838cd431693.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\c9ca8d107ba750c354ffa3e8d09c5ec0a367f2068685eaeac4e38f276f4e20a2.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ca9fadf38a1b106109d54c5a1cb6fc4520d184dc144a4c2cb688ef4f96b7a2ec.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\cb43200c6a3a085675f43b0a37afa6f7886f8f271c72ca2bc93641ee2e5b03d6.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\cddec3ccc262d807dbcbf7d14901482b60997c2b9abf7f40d1886832a36f3e13.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ce67f7b96ba59ee373adf56d42248cb692c558086dbaf6a762c14b62eff9fd2a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\cf3880ccc62aff1c64d9afdd2bfad934d66ce0823fcc06bb88dc05d92e3fe8cf.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\cfb79471ce4fdf10a3319517a28eb07a5cb7f54f7ce4249572ea4abc813d80b4.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d0094ef9094f112b7b3aeef52d87a9b3dfe02e0aced344e4e2628ef2cf6e80a9.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d0cd8b95040f16a1048ad086b331dc96a2fdef20923cd49108b7dcd0eebe59d8.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d24cb47584463b7b5dd8c609f4bd6c399a6947822237b53681dc86f5b47780c1.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d307e6cb768e232a0c570be6d3f1b317116bd8223e7f94e9dc84fba5b9d23e4e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d32559152bcd93350f3a7ef3af05b537eca65d51f5710cded613e7af7a984a43.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d38c648929ca508e82cc13e5865055ec7ab4d069fdca834031e51c591ea59ce2.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d3b7797afb055f8be2057e789e02dfd3ed60a920f8c9de79846f6ce91ceb6499.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d3ef5884dae8baba063260d92116b951b5e6ba707264bb9a775eee8de4d60a11.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d44cf65376b45064635c73b707354eea2dd1e77330a77cdfecc2916395886c4c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d4852d4d6abc8a744948cb54bbd7501867070d535d0411ffa56930156db7040a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d4cba89cc3133472946fd688fe01cd6fd436960bb7a0dd7418ed70e46af2c9a4.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d6086380b86eee0d1fa3a5eac2f30b0444a98e163c0bdccec62f0055cb62a487.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d69b3cbb631893baeef598b14b975b4d4085c30b9178c894befc1639cfe97960.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d72214981720dd3a9f0392561b053ae6597e52b2a7a457c714f881a9d8decd80.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\d9ecf5fd76dda47f2b1dc3ffa19ce9348ebeb0177f2c9f09c9d3687fc1ab3767.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\da67655508c8fb91709fd6fdadcb8fa7629a04e709e0c3f892d20ef2e5772192.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\daae95b76e1bf48df03c61a95f5f69df1f4d58f7e1ec7d027f5de96ca13bbadd.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\dc439ef6037b4b5c58cf3a2a268a4bfe209051ab23487d6c857c9653a48bdc9c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\dca5bc02e6e0ce5b1535a1e3b828129cd6ca970132501b683ae31d6e0c4bde41.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e115c72ea768882d012a30367bf755aeea105cc6a156ff023636871ba114d1b0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e30cd2609b09c5d2bcc02e06d75f57b9e81462c7ae5d0b9e43db85aa9a6f6751.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e42db0d0da8c164825729f50866dd4e7547a9fb582af2950c2ef7e68f46c1b44.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e4962f2da1f5d5d32cff4f6ef21c26c0df01686100703ad0aaa041f578488054.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e536b5f385aa112b076cae21669be66241387077e64879f2f7541a6c985037a2.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e598cc9ceecd086e9917f989870b7869f53f57a7f1dde5eea844bcef12b27dc8.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e77c223277bfd4a1169d9ffd7529339cc866630a34c436ce5a9b9480c6c53020.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e7964d10239469e3aede7dd5d7a4bdb9fa3133e8b17d49c019f158ce9a8babce.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e8dfee06d8c10d594aae58c10a336caa596f6f14d3955f0cab8fc059cb9bbbfe.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\e984bb6925042717fcc0d3ce7dd77d14a0e5204d5c7f159ef839308d386dd62f.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ec0a37dad88359a1deaaaced6676a85b8d3f6cfb6641492fd59b9c933990b965.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ed1a30d561c0c4732982c4b9771536297f85377170cf87a959cc4a6c8aec89de.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ed9dbb36b0ff2b55a89c07add3fd0d04c6280b8598a5cf79ff3ae2cdb11dd6a9.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ef4344caa653916ff8184e13e15f2d26927a1dd73b398b222f49879eea1b2891.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ef5ac71a0784d554393e3f26448f2672781058817a22c83f2130dcc411a7c8c2.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ef63315d67e1bf34bef3e649310271fddf4e53ace4539bebf17834bc3b8943d0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\efb2f8247b01ce68132f0e3ac937d03cb9a1668e0194fe4ace71e2db219fdd98.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\effdf0bcaf7aa6fa09e2c49abc810abefcec89f677d2b8c9a424a02b5a5030be.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f0ca260e2eb259f9a78e336d29673175348aad41be18b4da158d46bef22a3164.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f27e54526aa0a3fd1beb7ae658b9aef05df4488f3e77cb0eb8dee332a4ade05a.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f2d7b6a8ee2f143e8e58513aa4656f2148b00dc38793de8a717ae35864e9566d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f40a631ef32f34e2251cc599353f20ebd6671ae7da354b6a44fcb94a8da455e1.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f478b82821c1d7d8962a8ba7a89dbb99d0ff85316497eeacf787bdcc999abf22.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f5027efcb6f67080b1562a3e5bb12e795f4a86abce55881263b2e791002c9be0.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f5d84eb659e6ed877c0b7fa2a9b0961bb0180481388baa1f384a3541280cc59f.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f6b2e5f971c842cd64ecbfb5fdc8797122a48decaad530ddc75ac0a92b540ccb.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f6d3cbfe4ef1169880f06fd489c70a6dda3161326db638c890fceca17fb0ea9d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f6ef3e88398463965ab7e1c3db0c4dc58a08dc5dd7b9e08c4c1a5a0dcbc4256e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f6ff1919adf0720a3858f59b65485ff461e88a68948181573d27f7633d7f7629.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f73e7161b766e81993df4fb286c36e1b8396f33b486239293136a40b023a135c.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f7a4611d8dcfd03035d7277ca95987241208b2b5fe5f007f1de995e41c56b641.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\f7c3fe50d643ac47d326339754e26deaaa43a7c8d19a19b6db99b97a9dba3f40.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\fc4b8dc9b43207544bd2682950333709c45524a07f9389fd63f750864e79ab4e.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\fd4a127dca6e804032b833ed2ad172451f6ca8875bf80a64de269d2fd11c825d.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\fe14c278733e00c29d2d2de6e2414fc308c26d66f83916f3341c2840e3967087.json" />
+    <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ffacc3ed4b985dc811af12ced3fe72965a81c49f1e43a48f94fdbcc165b540ed.json" />
+    <None Remove="ClientApp\.editorconfig" />
+    <None Remove="ClientApp\.gitignore" />
+    <None Remove="ClientApp\angular.json" />
+    <None Remove="ClientApp\karma.conf.js" />
+    <None Remove="ClientApp\package-lock.json" />
+    <None Remove="ClientApp\package.json" />
+    <None Remove="ClientApp\proxy.conf.js" />
+    <None Remove="ClientApp\README.md" />
+    <None Remove="ClientApp\src\app\app.component.html" />
+    <None Remove="ClientApp\src\app\app.component.ts" />
+    <None Remove="ClientApp\src\app\app.module.ts" />
+    <None Remove="ClientApp\src\app\app.server.module.ts" />
+    <None Remove="ClientApp\src\app\home\home.component.html" />
+    <None Remove="ClientApp\src\app\home\home.component.ts" />
+    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.css" />
+    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.html" />
+    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.ts" />
+    <None Remove="ClientApp\src\app\search-history-page\log-card\log-card.component.css" />
+    <None Remove="ClientApp\src\app\search-history-page\log-card\log-card.component.html" />
+    <None Remove="ClientApp\src\app\search-history-page\log-card\log-card.component.ts" />
+    <None Remove="ClientApp\src\app\search-history-page\search-card\search-card.component.css" />
+    <None Remove="ClientApp\src\app\search-history-page\search-card\search-card.component.html" />
+    <None Remove="ClientApp\src\app\search-history-page\search-card\search-card.component.ts" />
+    <None Remove="ClientApp\src\app\search-history-page\search-history-page.component.css" />
+    <None Remove="ClientApp\src\app\search-history-page\search-history-page.component.html" />
+    <None Remove="ClientApp\src\app\search-history-page\search-history-page.component.ts" />
+    <None Remove="ClientApp\src\app\search-page\search-form\search-form.component.css" />
+    <None Remove="ClientApp\src\app\search-page\search-form\search-form.component.html" />
+    <None Remove="ClientApp\src\app\search-page\search-form\search-form.component.ts" />
+    <None Remove="ClientApp\src\app\search-page\search-page.component.css" />
+    <None Remove="ClientApp\src\app\search-page\search-page.component.html" />
+    <None Remove="ClientApp\src\app\search-page\search-page.component.ts" />
+    <None Remove="ClientApp\src\app\shared\log-model.model.ts" />
+    <None Remove="ClientApp\src\app\shared\log.service.ts" />
+    <None Remove="ClientApp\src\app\shared\search-engine.model.ts" />
+    <None Remove="ClientApp\src\app\shared\search-result.model.ts" />
+    <None Remove="ClientApp\src\app\shared\search.service.ts" />
+    <None Remove="ClientApp\src\assets\.gitkeep" />
+    <None Remove="ClientApp\src\environments\environment.prod.ts" />
+    <None Remove="ClientApp\src\environments\environment.ts" />
+    <None Remove="ClientApp\src\index.html" />
+    <None Remove="ClientApp\src\main.ts" />
+    <None Remove="ClientApp\src\polyfills.ts" />
+    <None Remove="ClientApp\src\styles.css" />
+    <None Remove="ClientApp\src\test.ts" />
+    <None Remove="ClientApp\tsconfig.app.json" />
+    <None Remove="ClientApp\tsconfig.json" />
+    <None Remove="ClientApp\tsconfig.spec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Angular.ASP_SearchPosition.Data\Angular.ASP_SearchPosition.Data.csproj" />
+  </ItemGroup>
+
+    <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+  
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --configuration production" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>wwwroot\%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>

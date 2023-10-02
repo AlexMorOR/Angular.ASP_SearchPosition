@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angular.ASP_SearchPosition.API", "Angular.ASP_SearchPosition.API\Angular.ASP_SearchPosition.API.csproj", "{D1507D6B-5482-4D0B-B24C-8A0C853AF678}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angular.ASP_SearchPosition.Data", "Angular.ASP_SearchPosition.Data\Angular.ASP_SearchPosition.Data.csproj", "{32069C7C-5DF8-403A-ABAC-79961567487A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D02A17F-9090-4EB2-8E79-4C9906042111}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1507D6B-5482-4D0B-B24C-8A0C853AF678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1507D6B-5482-4D0B-B24C-8A0C853AF678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1507D6B-5482-4D0B-B24C-8A0C853AF678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1507D6B-5482-4D0B-B24C-8A0C853AF678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32069C7C-5DF8-403A-ABAC-79961567487A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32069C7C-5DF8-403A-ABAC-79961567487A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32069C7C-5DF8-403A-ABAC-79961567487A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32069C7C-5DF8-403A-ABAC-79961567487A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A13BE25D-8E81-4629-8509-121C7E39806C}
+	EndGlobalSection
+EndGlobal

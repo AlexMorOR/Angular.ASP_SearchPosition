@@ -1,0 +1,37 @@
+version: '3.4'
+
+x-project-name: search-your-position
+
+services:
+
+  sqlserver:
+    image: "mcmoe/mssqldocker"
+    environment:
+      SA_PASSWORD: "SQLDevPass1"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+      MSSQL_DB: "main_db"
+      MSSQL_USER: "main_user"
+      MSSQL_PASSWORD: "MainUser1"
+    ports:
+      - "1433:1433"
+
+
+  angular.asp_searchposition:
+    image: ${DOCKER_REGISTRY-}angularaspsearchposition
+    build:
+      context: .
+      dockerfile: Angular.ASP_SearchPosition/Dockerfile
+    ports:
+      - "5080:5080"
+
+      
+  clientapp:
+    build:
+      context: ./Angular.ASP_SearchPosition/ClientApp
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./Angular.ASP_SearchPosition/ClientApp:/usr/share/nginx/html
+      - /app/node_modules
